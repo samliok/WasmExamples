@@ -7,5 +7,5 @@ There are two examples.
 
 The rust_wasm folder contains rust code I compiled down to WASM to show some simple examples.
 
-The token_contract folder is more complicated rust file that will be compiled to WASM and used by wazero runtime.
+The token_contract folder is contains rust code for a simple token contract, that will compiled to WASM and used by wazero runtime.
 
