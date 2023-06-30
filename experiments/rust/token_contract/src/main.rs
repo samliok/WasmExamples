@@ -77,6 +77,7 @@ fn main() {
     );
 }
 
+// using cfg(test) keeps the tests out of the main binary
 #[cfg(test)]
 mod tests {
     use super::*;
