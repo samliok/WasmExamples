@@ -1,0 +1,7 @@
+# extend if new rust crates are added so rust analyzer isnt confused
+[workspace]
+members = [
+    "experiments/rust/bytes_sdk",
+    "experiments/rust/rust_wasm",
+    "experiments/rust/token_contract",
+]
