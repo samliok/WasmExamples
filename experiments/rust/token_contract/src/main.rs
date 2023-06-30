@@ -81,6 +81,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    // cargo test --package token_contract --bin token_contract nocapture -- tests::test_simple_contract --exact --nocapture
     #[test]
     fn test_simple_contract() {
         let mut a = SimpleTokenContract::new("Avalanche".to_owned(), 1000);
@@ -103,5 +104,6 @@ mod tests {
         assert!(a.transfer(&alice, &bob, 100));
         // verify
         assert_eq!(a.balance(&bob), 100);
+        assert_eq!(a.balance(&alice), 900);
     }
 }
