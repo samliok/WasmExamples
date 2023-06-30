@@ -76,3 +76,35 @@ fn main() {
         a.transfer(&alice, &bob, 100)
     );
 }
+
+// using cfg(test) keeps the tests out of the main binary
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // cargo test --package token_contract --bin token_contract nocapture -- tests::test_simple_contract --exact --nocapture
+    #[test]
+    fn test_simple_contract() {
+        let mut a = SimpleTokenContract::new("Avalanche".to_owned(), 1000);
+
+        let alice = vec![0; 32];
+        let bob = vec![1; 32];
+
+        a.balances.insert(alice.clone(), 0);
+        a.balances.insert(bob.clone(), 0);
+
+        // no balance
+        assert!(!a.transfer(&alice, &bob, 100));
+
+        // mint
+        assert!(a.mint_to(&alice, 1000));
+        // verify
+        assert_eq!(a.balance(&alice), 1000);
+
+        // transfer to bob
+        assert!(a.transfer(&alice, &bob, 100));
+        // verify
+        assert_eq!(a.balance(&bob), 100);
+        assert_eq!(a.balance(&alice), 900);
+    }
+}
