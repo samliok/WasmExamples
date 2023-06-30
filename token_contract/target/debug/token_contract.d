@@ -1,1 +1,0 @@
-/Users/sam.liokumovich/Documents/Wasm/my_examples/rust_wasm_in_go/token_contract/target/debug/token_contract: /Users/sam.liokumovich/Documents/Wasm/my_examples/rust_wasm_in_go/token_contract/src/main.rs
