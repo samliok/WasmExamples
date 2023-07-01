@@ -9,6 +9,13 @@ struct SimpleTokenContract {
     balances: HashMap<Pubkey, u64>,
 }
 
+
+#[no-mangle]
+pub fn ChangeSupply(stc : SimpleTokenContract) {
+    
+}
+
+
 impl SimpleTokenContract {
     fn new(name: String, total_supply: u64) -> SimpleTokenContract {
         SimpleTokenContract {
