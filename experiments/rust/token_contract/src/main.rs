@@ -10,11 +10,12 @@ struct SimpleTokenContract {
 }
 
 
-#[no-mangle]
-pub fn ChangeSupply(stc : SimpleTokenContract) {
-    
-}
 
+
+// TODO: add a public SimpleTokenContract that persists in storage
+// pub contract : SimpleTokenContract = ...
+// then export new, mint_to, and transfer methods to host
+// these methods will update `contract`. 
 
 impl SimpleTokenContract {
     fn new(name: String, total_supply: u64) -> SimpleTokenContract {
@@ -62,6 +63,7 @@ impl SimpleTokenContract {
         *self.balances.get(address).unwrap_or(&mut 0)
     }
 }
+
 
 fn main() {
     let mut a = SimpleTokenContract::new(String::from("Avalanche"), 1000);

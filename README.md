@@ -18,6 +18,8 @@ that will compiled to WASM and used by wazero runtime.
 
 ## Vocabulary
 
-Host Function: Host Function is a function defined in the Host program. For
+`Host`: The Host is the program that loads and executes the Wasm module. 
+
+`Host Function`: Host Function is a function defined in the Host program. For
 Wasm, the Host Function can be used as an import segment to be registered in a
 module, and then it can be called when Wasm is running.
